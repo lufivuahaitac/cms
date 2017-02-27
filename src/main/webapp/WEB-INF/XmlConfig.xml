@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <tables>
+        <menu id="1">
+            <code>1</code>
+            <message>Thông tin không đúng</message>
+        </menu>
+        <menu id="2">
+            <code>2</code>
+            <message>Thiếu thông tin</message>
+        </menu>
+        <menu id="3">
+            <code>3</code>
+            <message>Sản phẩm phạm pháp</message>
+        </menu>
+        <menu id="4">
+            <code>4</code>
+            <message>Sản phẩm không đủ điều kiện đăng ký </message>
+        </menu>
+        <menu id="5">
+            <code>5</code>
+            <message>Khác</message>
+        </menu>
+    </tables>
+     <tables>
+        <statusQrcode id="1">
+            <code>1</code>
+            <message>Hoạt động</message>
+        </statusQrcode>
+        <statusQrcode id="-1">
+            <code>-1</code>
+            <message>Tạm khóa</message>
+        </statusQrcode>
+    </tables>
+</database>
