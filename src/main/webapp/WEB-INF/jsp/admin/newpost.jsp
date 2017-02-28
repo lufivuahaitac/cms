@@ -28,6 +28,10 @@
 
         <!--  CSS for Demo Purpose, don't include it in your project     -->
         <link href="<%=request.getContextPath()%>/resources/css/demo.css" rel="stylesheet" />
+        
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/font-awesome.css"/>
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/build.css"/>
 
         <!--  Fonts and icons     -->
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -52,12 +56,21 @@
                         </a>
                     </div>
 
-                    <ul class="nav">
-                        <li>
-                            <a href="dashboard.html">
+                    <ul class="nav" id="menu">
+                        <li data-submenu-id="submenu-duoc-langur">
+                            <a href="#">
                                 <i class="ti-panel"></i>
                                 <p>Dashboard</p>
                             </a>
+                            <div id="submenu-duoc-langur" class="popover">
+                                <ul class="submenu">
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="active">
                             <a href="user.html">
@@ -153,7 +166,7 @@
                         </div>
                         <div class="form-group col-sm-12">
                             <label>https://siteurl.com/</label>
-                            <input type="text" style="width: 50%; border: solid 1px #d8d8d8;" id="post-url" placeholder="" ondblclick="this.readOnly=''" value="" class="url" readonly="readonly"  class="form-control">
+                            <input type="text" style="width: 50%; border: solid 1px #d8d8d8;" id="post-url" placeholder="" ondblclick="this.readOnly=''" value="" class="url" readonly="readonly" class="form-control">
                         </div>
                         <div class="form-group col-sm-12">
                             <textarea class="post-content"></textarea>
@@ -162,7 +175,30 @@
                 </div>
                 
                 <div class="right-sidebar col-md-2" data-background-color="white" data-active-color="danger">
-                    đàadsfadsfadfadsfadsfadsfd
+                    <div class="box">
+                        <div class="inside">
+                            <button type="submit" class="button">Public</button>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <label class="inside">Category</label>
+                        <div class="inside">
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox1">
+                                <label for="checkbox1">
+                                    Check me out
+                                </label>
+                                <input type="checkbox" id="checkbox2">
+                                <label for="checkbox2">
+                                    Check me out
+                                </label>
+                                <input type="checkbox" id="checkbox3">
+                                <label for="checkbox3">
+                                    Check me out
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -176,7 +212,7 @@
     <script src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js" type="text/javascript"></script>
 
     <!--  Checkbox, Radio & Switch Plugins -->
-    <script src="<%=request.getContextPath()%>/resources/js/bootstrap-checkbox-radio.js"></script>
+    <!--<script src="<%=request.getContextPath()%>/resources/js/bootstrap-checkbox-radio.js"></script>
 
     <!--  Charts Plugin -->
     <script src="<%=request.getContextPath()%>/resources/js/chartist.min.js"></script>
@@ -198,9 +234,15 @@
     
     <script src="<%=request.getContextPath()%>/resources/js/init-tinymce.js"></script>
     
+    <script src="<%=request.getContextPath()%>/resources/js/jquery.menu-aim.js"></script>
+    
     <script>
         $( "#post-url" ).blur(function() {
             this.readOnly='readonly';
+        });
+        $("#menu").menuAim({
+            activate: $.noop,  // fired on row activation
+            deactivate: $.noop  // fired on row deactivation
         });
     </script>
 
